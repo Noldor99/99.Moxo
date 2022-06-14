@@ -1,0 +1,160 @@
+// Container
+.header__container,
+.tayler__wrap,
+.lead__wrap
+    @media (max-width: $breakpoint992)
+        max-width: 970px
+
+    @media (max-width: $breakpoint768)
+        max-width: 740px
+
+    @media (max-width: $breakpoint480)
+        max-width: none
+
+.header__container,
+.tayler__wrap
+    max-width: ($containerWidthHeader + $containerPadding) + px
+    width: 100%
+    margin: 0 auto
+    padding: 0 $containerSidePadding + px
+
+.lead__wrap,
+.heppy__wpap,
+.awards__wrap,
+.portfolio__wrap
+    max-width: ($containerWidthLead + $containerPadding) + px
+    width: 100%
+    margin: 0 auto
+    padding: 0 $containerSidePadding + px
+
+// Animations
+// Fade
+@keyframes fade
+    0%
+        opacity: 0
+
+    100%
+        opacity: 1
+
+.button-border,
+.tayler__talk
+    border: solid 1px
+    padding: 11px 26px 8px
+    display: inline-flex
+
+.tayler__got
+    padding: 13px 33px
+    background: black
+    color: white
+    display: inline-flex
+//fonts
+
+body
+    font-family: 'Bai Jamjuree'
+    font-style: normal
+    font-weight: 400
+    @extend %f16-24
+    color: #161513
+    background: #F5F5F5
+    &.locked
+        overflow: hidden
+
+h1
+    @extend %f56-64
+
+$maxWidth: 1280
+@mixin adaptiv-font($pcSize, $mobSize, $point,$line)
+    @if $mobSize == 0
+        @if $pcSize<58
+            $mobSize: 24
+        @if $pcSize<46
+            $mobSize: 20
+        @if $pcSize<32
+            $mobSize: 16
+        @if $pcSize<24
+            $mobSize: 16
+        @if $pcSize<18
+            $mobSize: 14
+        @if $pcSize<14
+            $mobSize: 9
+        @if $pcSize<10
+            $mobSize: 6
+    @if 1 + 1 == 2
+        $addSize: $mobSize - $pcSize
+        $addSize2: $point - $containerWidthHeader
+        $maxWidth: $maxWidth - 320
+        //font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}))
+        $aa: ($addSize2)*($addSize)/(360-$containerWidthHeader)+$pcSize
+        font-size: #{$aa+px}
+        $bb: $aa*$line/$pcSize
+        line-height: #{$bb+px}
+
+%f56-64
+    font-size: 56px
+    line-height: 64px
+    letter-spacing: 0.56px
+    @media (max-width: $breakpoint1010)
+        @include adaptiv-font(56,22,1010,64)
+    @media (max-width: $breakpoint768)
+        @include adaptiv-font(56,22,769,64)
+    @media (max-width: $breakpoint480)
+        @include adaptiv-font(56,22,480,64)
+    @media (max-width: $breakpoint360)
+        @include adaptiv-font(56,22,360,64)
+
+%f45-56 //@extend %f45-56
+    font-size: 45px
+    line-height: 56px
+    letter-spacing: 1.44px
+    @media (max-width: $breakpoint1010)
+        @include adaptiv-font(45,0,1010,64)
+    @media (max-width: $breakpoint768)
+        @include adaptiv-font(45,0,769,64)
+    @media (max-width: $breakpoint480)
+        @include adaptiv-font(45,0,480,64)
+    @media (max-width: $breakpoint360)
+        @include adaptiv-font(45,0,360,64)
+
+%f31-40
+    font-size: 31px
+    line-height: 40px
+    letter-spacing: 0.64px
+    @media (max-width: $breakpoint480)
+        @include adaptiv-font(31,22,480,40)
+%f23-32
+    font-size: 23px
+    line-height: 32px
+    letter-spacing: 0.48px
+    @media (max-width: $breakpoint768)
+        @include adaptiv-font(23,0,768,32)
+    @media (max-width: $breakpoint480)
+        @include adaptiv-font(23,0,480,32)
+    @media (max-width: $breakpoint360)
+        @include adaptiv-font(23,0,360,32)
+%f20-32 //@extend %f20-32
+    font-size: 20px
+    line-height: 32px
+
+%f18-32 //@extend %f18-32
+    font-size: 18px
+    line-height: 32px
+    @media (max-width: $breakpoint360)
+        @include adaptiv-font(18,0,360,32)
+
+%f16-32 //@extend %f16-32
+    font-size: 16px
+    line-height: 32px
+    letter-spacing: 1.28px
+    @media (max-width: $breakpoint480)
+        @include adaptiv-font(16,12,480,32)
+
+%f16-24  //body
+    font-size: 16px
+    line-height: 24px
+
+%f12-16
+    font-size: 12px
+    line-height: 16px
+    color: $orange
+    @media (max-width: $breakpoint480)
+        @include adaptiv-font(12,9,480,16)

@@ -1,0 +1,46 @@
+.lead
+   .lead__wrap
+      display: flex
+      align-items: flex-start
+      justify-content: space-between
+      padding-top: 190px
+      padding-bottom: 125px
+      @media (max-width: $breakpoint768)
+         padding-bottom: 45px
+         padding-top: 80px
+      @media (max-width: $breakpoint1010)
+         flex-direction: column
+      .lead__left
+         flex: 0 1 351px
+         @media (max-width: $breakpoint1010)
+            flex: inherit
+            padding-bottom: 30px
+         .lead__left-strip
+            display: flex
+            align-items: center
+            column-gap: 8px
+            padding-bottom: 22px
+            p
+               @extend %f23-32
+            img
+         .lead__left-title
+            @extend %f56-64
+      .lead-right
+         flex: 0 1 598px
+         @media (max-width: $breakpoint1010)
+            flex: inherit
+         >p
+            @extend %f31-40
+            padding-bottom: 36px
+         .lead-right__title
+            @extend %f18-32
+            padding-bottom: 28px
+         .lead-column
+            display: flex
+            justify-content: space-between
+            .lead-items
+               .lead-items__top
+                  @extend %f12-16
+                  padding-bottom: 10px
+               .lead-items__bottom
+                  @extend %f23-32

@@ -1,0 +1,38 @@
+.tayler
+   .tayler__wrap
+      padding-top: 40px
+      display: flex
+      align-items: center
+      @media (max-width: $breakpoint1010)
+         flex-direction: column
+      .tayler__container
+         flex: 1 0 675px
+         @media (max-width: $breakpoint1010)
+            flex: inherit
+            padding-bottom: 30px
+         .tayler__title
+            h1
+         .tayler__strip
+            max-width: 473px
+            padding-top: 36px
+            display: flex
+            justify-content: space-between
+            column-gap: 16px
+            @media (max-width: $breakpoint480)
+               column-gap: 8px
+            p
+               @extend %f23-32
+            img
+         .tayler__botton
+            display: flex
+            padding-top: 36px
+            .tayler__got
+            .tayler__talk
+   .tayler__img
+      flex: 0 1 630px
+      display: flex
+      justify-content: flex-end
+      @media (max-width: $breakpoint1010)
+         flex: inherit
+      img
+         max-width: 100%
